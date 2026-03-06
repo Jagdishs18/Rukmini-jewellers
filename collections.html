@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections - RUKMINIHALL JEWELLERS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ <header>
+    <div class="container header-inner">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="RUKMINIHALL JEWELLERS Logo" class="logo-image" onerror="this.style.display='none'">
+            <div class="logo">
+                <span class="main-name">RUKMINIHALL JEWELLERS</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="collections.html" class="active">Collections</a>
+            <a href="new-arrivals.html">New</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="header-icons">
+            <i class="far fa-heart"></i>
+            <i class="far fa-user"></i>
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+</header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Collections</h1>
+            <p>Discover timeless elegance crafted for generations</p>
+        </div>
+    </section>
+
+    <!-- Collection Filters -->
+    <section class="section">
+        <div class="container">
+            <div class="collection-tabs">
+                <button class="tab-btn active" data-collection="all">All</button>
+                <button class="tab-btn" data-collection="gold">Gold</button>
+                <button class="tab-btn" data-collection="diamond">Diamond</button>
+                <button class="tab-btn" data-collection="silver">Silver</button>
+                <button class="tab-btn" data-collection="bridal">Bridal</button>
+            </div>
+
+            <div class="product-grid" id="collection-grid">
+                <!-- Gold Collection -->
+                <div class="product-item" data-category="gold" id="gold">
+                    <img src="images/collections/gold1.jpg" onerror="this.src='https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1887&auto=format&fit=crop'" alt="Gold">
+                    <h3>Antique Gold Necklace</h3>
+                    <span class="price">₹ 2.35L</span>
+                </div>
+                <div class="product-item" data-category="gold">
+                    <img src="images/collections/gold2.jpg" onerror="this.src='https://images.unsplash.com/photo-1603814964921-91ff3c596e3e?q=80&w=1887&auto=format&fit=crop'" alt="Gold">
+                    <h3>Temple Gold Bangle</h3>
+                    <span class="price">₹ 1.85L</span>
+                </div>
+                <div class="product-item" data-category="gold">
+                    <img src="images/collections/gold3.jpg" onerror="this.src='https://images.unsplash.com/photo-1611651335412-ab9c452754f1?q=80&w=1974&auto=format&fit=crop'" alt="Gold">
+                    <h3>Mughal Gold Necklace</h3>
+                    <span class="price">₹ 3.2L</span>
+                </div>
+                <div class="product-item" data-category="gold">
+                    <img src="images/collections/gold4.jpg" onerror="this.src='https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?q=80&w=1887&auto=format&fit=crop'" alt="Gold">
+                    <h3>Gold Jhumka Earrings</h3>
+                    <span class="price">₹ 95K</span>
+                </div>
+                
+                <!-- Diamond Collection -->
+                <div class="product-item" data-category="diamond" id="diamond">
+                    <img src="images/collections/diamond1.jpg" onerror="this.src='https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?q=80&w=1887&auto=format&fit=crop'" alt="Diamond">
+                    <h3>Solitaire Diamond Ring</h3>
+                    <span class="price">₹ 4.5L</span>
+                </div>
+                <div class="product-item" data-category="diamond">
+                    <img src="images/collections/diamond2.jpg" onerror="this.src='https://images.unsplash.com/photo-1620656798579-1984d9e87df7?q=80&w=1964&auto=format&fit=crop'" alt="Diamond">
+                    <h3>Diamond Choker Set</h3>
+                    <span class="price">₹ 3.8L</span>
+                </div>
+                <div class="product-item" data-category="diamond">
+                    <img src="images/collections/diamond3.jpg" onerror="this.src='https://images.unsplash.com/photo-1633409361767-2644021e8a44?q=80&w=1780&auto=format&fit=crop'" alt="Diamond">
+                    <h3>Emerald Diamond Necklace</h3>
+                    <span class="price">₹ 5.1L</span>
+                </div>
+                <div class="product-item" data-category="diamond">
+                    <img src="images/collections/diamond4.jpg" onerror="this.src='https://images.unsplash.com/photo-1626017595300-7a083e20d6b2?q=80&w=1887&auto=format&fit=crop'" alt="Diamond">
+                    <h3>Diamond Bangles Set</h3>
+                    <span class="price">₹ 6.2L</span>
+                </div>
+                
+                <!-- Silver Collection -->
+                <div class="product-item" data-category="silver" id="silver">
+                    <img src="images/collections/silver1.jpg" onerror="this.src='https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1887&auto=format&fit=crop'" alt="Silver">
+                    <h3>Silver Temple Necklace</h3>
+                    <span class="price">₹ 85K</span>
+                </div>
+                <div class="product-item" data-category="silver">
+                    <img src="images/collections/silver2.jpg" onerror="this.src='https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1974&auto=format&fit=crop'" alt="Silver">
+                    <h3>Silver Anklet (Payal)</h3>
+                    <span class="price">₹ 42K</span>
+                </div>
+                <div class="product-item" data-category="silver">
+                    <img src="images/collections/silver3.jpg" onerror="this.src='https://images.unsplash.com/photo-1585232457826-71f6f4684e44?q=80&w=1887&auto=format&fit=crop'" alt="Silver">
+                    <h3>Silver Bridal Set</h3>
+                    <span class="price">₹ 1.2L</span>
+                </div>
+                <div class="product-item" data-category="silver">
+                    <img src="images/collections/silver4.jpg" onerror="this.src='https://images.unsplash.com/photo-1633409361618-7346d959e974?q=80&w=1780&auto=format&fit=crop'" alt="Silver">
+                    <h3>Silver Maang Tikka</h3>
+                    <span class="price">₹ 28K</span>
+                </div>
+                
+                <!-- Bridal Collection -->
+                <div class="product-item" data-category="bridal" id="bridal">
+                    <img src="images/collections/bridal1.jpg" onerror="this.src='https://images.unsplash.com/photo-1591025207163-942350e47db8?q=80&w=1910&auto=format&fit=crop'" alt="Bridal">
+                    <h3>Complete Bridal Set</h3>
+                    <span class="price">₹ 7.5L</span>
+                </div>
+                <div class="product-item" data-category="bridal">
+                    <img src="images/collections/bridal2.jpg" onerror="this.src='https://images.unsplash.com/photo-1603814964921-91ff3c596e3e?q=80&w=1887&auto=format&fit=crop'" alt="Bridal">
+                    <h3>Polki Bridal Haar</h3>
+                    <span class="price">₹ 8.2L</span>
+                </div>
+                <div class="product-item" data-category="bridal">
+                    <img src="images/collections/bridal3.jpg" onerror="this.src='https://images.unsplash.com/photo-1611651335412-ab9c452754f1?q=80&w=1974&auto=format&fit=crop'" alt="Bridal">
+                    <h3>Kundan Bridal Set</h3>
+                    <span class="price">₹ 5.9L</span>
+                </div>
+                <div class="product-item" data-category="bridal">
+                    <img src="images/collections/bridal4.jpg" onerror="this.src='https://images.unsplash.com/photo-1620656798579-1984d9e87df7?q=80&w=1964&auto=format&fit=crop'" alt="Bridal">
+                    <h3>Bridal Choker Set</h3>
+                    <span class="price">₹ 4.8L</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+ <footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo-container">
+                    <img src="images/logo.png" alt="RUKMINIHALL JEWELLERS Logo" class="footer-logo-image" onerror="this.style.display='none'">
+                    <div class="footer-logo">
+                        <span class="footer-main-name">RUKMINIHALL</span>
+                        <span class="footer-main-name-part">JEWELLERS</span>
+                        <div class="footer-location">CHANNARAYAPATNA</div>
+                        <div class="footer-established">Since 1962</div>
+                    </div>
+                </div>
+                <p class="footer-description">Crafting heirlooms that celebrate India's rich heritage with uncompromising purity.</p>
+                <div class="social">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <a href="collections.html#gold">Gold</a>
+                <a href="collections.html#diamond">Diamond</a>
+                <a href="collections.html#silver">Silver</a>
+                <a href="collections.html#bridal">Bridal</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="contact.html">Contact</a>
+                <a href="shipping-policy.html">Shipping Policy</a>
+                <a href="refund-policy.html">Refund Policy</a>
+            </div>
+            <div class="footer-col">
+                <h4>Policies</h4>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
+                <a href="accessibility-statement.html">Accessibility</a>
+            </div>
+            <div class="footer-col">
+                <h4>Address</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Main Road, Channarayapatna</p>
+                <p><i class="fas fa-map"></i> Karnataka, India - 573116</p>
+                <p><i class="fas fa-phone"></i> +91 8156 123456</p>
+                <p><i class="fas fa-envelope"></i> info@rukminihall.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a> <span class="separator">|</span>
+                <a href="accessibility-statement.html">Accessibility Statement</a> <span class="separator">|</span>
+                <a href="shipping-policy.html">Shipping Policy</a> <span class="separator">|</span>
+                <a href="terms-conditions.html">Terms & Conditions</a> <span class="separator">|</span>
+                <a href="refund-policy.html">Refund Policy</a>
+            </div>
+            <p class="copyright">© 2025 <span class="brand-highlight">RUKMINIHALL JEWELLERS</span>, Channarayapatna. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Auto-filter based on URL hash
+        document.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const tab = document.querySelector(`[data-collection="${hash}"]`);
+                if (tab) {
+                    tab.click();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
