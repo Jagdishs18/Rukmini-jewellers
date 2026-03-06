@@ -8,25 +8,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        .page-header {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .gallery-section {
+            padding: 80px 0;
+        }
+        
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 25px;
         }
+        
         .gallery-item {
             position: relative;
             overflow: hidden;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
             cursor: pointer;
+            aspect-ratio: 1/1;
         }
+        
         .gallery-item img {
             width: 100%;
-            height: 300px;
+            height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.5s ease;
         }
+        
         .gallery-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
+        
         .gallery-overlay {
             position: absolute;
             bottom: 0;
@@ -36,43 +61,69 @@
             color: white;
             padding: 20px;
             transform: translateY(100%);
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
         }
+        
         .gallery-item:hover .gallery-overlay {
             transform: translateY(0);
         }
+        
+        .gallery-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--gold);
+        }
+        
         @media (max-width: 768px) {
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-   
     <header>
-    <div class="container header-inner">
-        <div class="logo-container">
-            <img src="images/logo.png" alt="RUKMINIHALL JEWELLERS Logo" class="logo-image" onerror="this.style.display='none'">
-            <div class="logo">
-                <span class="main-name">RUKMINIHALL JEWELLERS</span>
+        <div class="container header-inner">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="RUKMINIHALL JEWELLERS Logo" class="logo-image" onerror="this.style.display='none'">
+                <div class="logo">
+                    <span class="main-name">RUKMINIHALL</span>
+                    <span class="main-name-part">JEWELLERS</span>
+                    <div class="location-badge">CHANNARAYAPATNA</div>
+                </div>
+            </div>
+            
+            <div class="hamburger" id="hamburger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" onclick="closeMenu()">Home</a>
+                <a href="collections.html" onclick="closeMenu()">Collections</a>
+                <a href="new-arrivals.html" onclick="closeMenu()">New Arrivals</a>
+                <a href="about.html" onclick="closeMenu()">About</a>
+                <a href="gallery.html" class="active" onclick="closeMenu()">Gallery</a>
+                <a href="contact.html" onclick="closeMenu()">Contact</a>
+            </div>
+            
+            <div class="header-icons">
+                <i class="far fa-heart"></i>
+                <i class="far fa-user"></i>
+                <i class="fas fa-search"></i>
             </div>
         </div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="collections.html">Collections</a>
-            <a href="new-arrivals.html">New</a>
-            <a href="about.html">About</a>
-            <a href="gallery.html" class="active">Gallery</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <div class="header-icons">
-            <i class="far fa-heart"></i>
-            <i class="far fa-user"></i>
-            <i class="fas fa-search"></i>
-        </div>
-    </div>
-</header>
+    </header>
 
     <section class="page-header">
         <div class="container">
@@ -81,136 +132,125 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="gallery-section">
         <div class="container">
             <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
                 <div class="gallery-item">
-                    <img src="images/gallery/gallery-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1633409361618-7346d959e974?q=80&w=1780&auto=format&fit=crop'" alt="Peacock Haar">
+                    <img src="images/gallery/gallery-1.jpg" alt="Gold Necklace" onerror="this.src='https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1887&auto=format&fit=crop'">
                     <div class="gallery-overlay">
-                        <h3>Peacock Haar</h3>
-                        <p>Gold & Emerald</p>
+                        <h3>Gold Necklace</h3>
+                        <p>22K Hallmarked Gold</p>
                     </div>
                 </div>
+                
+                <!-- Gallery Item 2 -->
                 <div class="gallery-item">
-                    <img src="images/gallery/gallery-2.jpg" onerror="this.src='https://images.unsplash.com/photo-1633409361767-2644021e8a44?q=80&w=1780&auto=format&fit=crop'" alt="Emerald Choker">
+                    <img src="images/gallery/gallery-2.jpg" alt="Diamond Ring" onerror="this.src='https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?q=80&w=1887&auto=format&fit=crop'">
                     <div class="gallery-overlay">
-                        <h3>Emerald Choker</h3>
-                        <p>Gold & Emerald</p>
+                        <h3>Diamond Ring</h3>
+                        <p>Solitaire Collection</p>
                     </div>
                 </div>
+                
+                <!-- Gallery Item 3 -->
                 <div class="gallery-item">
-                    <img src="images/gallery/gallery-3.jpg" onerror="this.src='https://images.unsplash.com/photo-1585232457826-71f6f4684e44?q=80&w=1887&auto=format&fit=crop'" alt="Gold Chain">
+                    <img src="images/gallery/gallery-3.jpg" alt="Bridal Set" onerror="this.src='https://images.unsplash.com/photo-1591025207163-942350e47db8?q=80&w=1910&auto=format&fit=crop'">
                     <div class="gallery-overlay">
-                        <h3>Gold Chain Set</h3>
-                        <p>22K Gold</p>
+                        <h3>Bridal Set</h3>
+                        <p>Heirloom Collection</p>
                     </div>
                 </div>
+                
+                <!-- Gallery Item 4 -->
                 <div class="gallery-item">
-                    <img src="images/gallery/gallery-4.jpg" onerror="this.src='https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1887&auto=format&fit=crop'" alt="Nizam Earrings">
+                    <img src="images/gallery/gallery-4.jpg" alt="Silver Earrings" onerror="this.src='https://images.unsplash.com/photo-1585232457826-71f6f4684e44?q=80&w=1887&auto=format&fit=crop'">
                     <div class="gallery-overlay">
-                        <h3>Nizam Earrings</h3>
-                        <p>Gold & Kundan</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/collections/gold-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1887&auto=format&fit=crop'" alt="Antique Gold">
-                    <div class="gallery-overlay">
-                        <h3>Antique Gold</h3>
-                        <p>Temple Jewellery</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/collections/diamond-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?q=80&w=1887&auto=format&fit=crop'" alt="Solitaire">
-                    <div class="gallery-overlay">
-                        <h3>Solitaire Ring</h3>
-                        <p>Diamond</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/collections/bd1.jpg" onerror="this.src='https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1887&auto=format&fit=crop'" alt="Silver">
-                    <div class="gallery-overlay">
-                        <h3>Silver Temple</h3>
+                        <h3>Silver Earrings</h3>
                         <p>Pure Silver</p>
                     </div>
                 </div>
+                
+                <!-- Gallery Item 5 -->
                 <div class="gallery-item">
-                    <img src="images/collections/bd2.jpg" onerror="this.src='https://images.unsplash.com/photo-1591025207163-942350e47db8?q=80&w=1910&auto=format&fit=crop'" alt="Bridal">
-                    <div class="gallery-overlay">
-                        <h3>Bridal Set</h3>
-                        <p>Gold & Polki</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/collections/bd3.jpg" onerror="this.src='https://images.unsplash.com/photo-1603814964921-91ff3c596e3e?q=80&w=1887&auto=format&fit=crop'" alt="Bangles">
+                    <img src="images/gallery/gallery-5.jpg" alt="Gold Bangles" onerror="this.src='https://images.unsplash.com/photo-1611651335412-ab9c452754f1?q=80&w=1974&auto=format&fit=crop'">
                     <div class="gallery-overlay">
                         <h3>Gold Bangles</h3>
-                        <p>22K Hallmarked</p>
+                        <p>Temple Design</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item">
+                    <img src="images/gallery/gallery-6.jpg" alt="Diamond Necklace" onerror="this.src='https://images.unsplash.com/photo-1620656798579-1984d9e87df7?q=80&w=1964&auto=format&fit=crop'">
+                    <div class="gallery-overlay">
+                        <h3>Diamond Necklace</h3>
+                        <p>Modern Collection</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-   <footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div class="footer-logo-container">
-                    <img src="images/logo.png" alt="RUKMINIHALL JEWELLERS Logo" class="footer-logo-image" onerror="this.style.display='none'">
-                    <div class="footer-logo">
-                        <span class="footer-main-name">RUKMINIHALL</span>
-                        <span class="footer-main-name-part">JEWELLERS</span>
-                        <div class="footer-location">CHANNARAYAPATNA</div>
-                        <div class="footer-established">Since 1962</div>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo-container">
+                        <img src="images/logo.png" alt="RUKMINIHALL JEWELLERS Logo" class="footer-logo-image" onerror="this.style.display='none'">
+                        <div class="footer-logo">
+                            <span class="footer-main-name">RUKMINIHALL</span>
+                            <span class="footer-main-name-part">JEWELLERS</span>
+                            <div class="footer-location">CHANNARAYAPATNA</div>
+                        </div>
+                    </div>
+                    <p class="footer-description">Since 1962, crafting heirlooms that celebrate India's rich heritage.</p>
+                    <div class="social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <p class="footer-description">Crafting heirlooms that celebrate India's rich heritage with uncompromising purity.</p>
-                <div class="social">
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <a href="collections.html#gold">Gold</a>
+                    <a href="collections.html#diamond">Diamond</a>
+                    <a href="collections.html#silver">Silver</a>
+                    <a href="collections.html#bridal">Bridal</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="contact.html">Contact</a>
+                    <a href="shipping-policy.html">Shipping Policy</a>
+                    <a href="refund-policy.html">Refund Policy</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Policies</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-conditions.html">Terms & Conditions</a>
+                    <a href="accessibility-statement.html">Accessibility</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Address</h4>
+                    <p>Main Road, Channarayapatna<br> Karnataka - 573116</p>
                 </div>
             </div>
-            <div class="footer-col">
-                <h4>Collections</h4>
-                <a href="collections.html#gold">Gold</a>
-                <a href="collections.html#diamond">Diamond</a>
-                <a href="collections.html#silver">Silver</a>
-                <a href="collections.html#bridal">Bridal</a>
-            </div>
-            <div class="footer-col">
-                <h4>Support</h4>
-                <a href="contact.html">Contact</a>
-                <a href="shipping-policy.html">Shipping Policy</a>
-                <a href="refund-policy.html">Refund Policy</a>
-            </div>
-            <div class="footer-col">
-                <h4>Policies</h4>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms-conditions.html">Terms & Conditions</a>
-                <a href="accessibility-statement.html">Accessibility</a>
-            </div>
-            <div class="footer-col">
-                <h4>Address</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Main Road, Channarayapatna</p>
-                <p><i class="fas fa-map"></i> Karnataka, India - 573116</p>
-                <p><i class="fas fa-phone"></i> +91 8156 123456</p>
-                <p><i class="fas fa-envelope"></i> info@rukminihall.com</p>
+            <div class="footer-bottom">
+                <p>© 2025 RUKMINIHALL JEWELLERS, Channarayapatna</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a> <span class="separator">|</span>
-                <a href="accessibility-statement.html">Accessibility Statement</a> <span class="separator">|</span>
-                <a href="shipping-policy.html">Shipping Policy</a> <span class="separator">|</span>
-                <a href="terms-conditions.html">Terms & Conditions</a> <span class="separator">|</span>
-                <a href="refund-policy.html">Refund Policy</a>
-            </div>
-            <p class="copyright">© 2025 <span class="brand-highlight">RUKMINIHALL JEWELLERS</span>, Channarayapatna. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('active');
+            document.getElementById('hamburger-menu').classList.toggle('open');
+        }
+        
+        function closeMenu() {
+            document.getElementById('nav-links').classList.remove('active');
+            document.getElementById('hamburger-menu').classList.remove('open');
+        }
+    </script>
 </body>
 </html>

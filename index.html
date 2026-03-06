@@ -12,44 +12,35 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- <header>
-        <div class="container header-inner">
-            <div class="logo">
-                <span class="main-name">RUKMINIHALL JEWELLERS</span>
-            </div>
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="collections.html">Collections</a>
-                <a href="new-arrivals.html">New</a>
-                <a href="about.html">About</a>
-                <a href="gallery.html">Gallery</a>  
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="header-icons">
-                <i class="far fa-heart"></i>
-                <i class="far fa-user"></i>
-                <i class="fas fa-search"></i>
-            </div>
-        </div>
-    </header> -->
 
-<header>
+
+    <header>
     <div class="container header-inner">
         <div class="logo-container">
             <img src="images/logo.png" alt="RUKMINIHALL JEWELLERS Logo" class="logo-image" onerror="this.style.display='none'">
             <div class="logo">
                 <span class="main-name">RUKMINIHALL</span>
                 <span class="main-name-part">JEWELLERS</span>
+                <div class="location-badge">CHANNARAYAPATNA</div>
             </div>
         </div>
-        <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="collections.html">Collections</a>
-            <a href="new-arrivals.html">New</a>
-            <a href="about.html">About</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
+        
+        <!-- Hamburger Icon for Mobile -->
+        <div class="hamburger" id="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+        
+        <div class="nav-links" id="nav-links">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="collections.html" onclick="closeMenu()">Collections</a>
+            <a href="new-arrivals.html" onclick="closeMenu()">New Arrivals</a>
+            <a href="about.html" onclick="closeMenu()">About</a>
+            <a href="gallery.html" onclick="closeMenu()">Gallery</a>
+            <a href="contact.html" onclick="closeMenu()">Contact</a>
+        </div>
+        
         <div class="header-icons">
             <i class="far fa-heart"></i>
             <i class="far fa-user"></i>
@@ -57,6 +48,45 @@
         </div>
     </div>
 </header>
+
+<!-- Add this JavaScript right after header -->
+<script>
+function toggleMenu() {
+    var navLinks = document.getElementById('nav-links');
+    var hamburger = document.getElementById('hamburger-menu');
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('open');
+}
+
+function closeMenu() {
+    var navLinks = document.getElementById('nav-links');
+    var hamburger = document.getElementById('hamburger-menu');
+    navLinks.classList.remove('active');
+    hamburger.classList.remove('open');
+}
+</script>
+
+
+<style>
+/* Emergency mobile menu fix */
+@media (max-width: 1000px) {
+    .hamburger {
+        display: flex !important;
+    }
+    .nav-links.active {
+        display: flex !important;
+        position: fixed !important;
+        top: 80px !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: white !important;
+        flex-direction: column !important;
+        padding: 20px 0 !important;
+        z-index: 9999 !important;
+    }
+}
+</style>
+ 
 
     <!-- HERO SECTION -->
     <!-- <section id="home" class="hero">
@@ -303,6 +333,18 @@
         </div>
     </div>
 </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('active');
+            document.getElementById('hamburger-menu').classList.toggle('open');
+        }
+        
+        function closeMenu() {
+            document.getElementById('nav-links').classList.remove('active');
+            document.getElementById('hamburger-menu').classList.remove('open');
+        }
+    </script>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>

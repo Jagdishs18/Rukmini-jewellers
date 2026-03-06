@@ -252,6 +252,120 @@ header {
     flex-wrap: wrap;
 }
 
+/* ===== MOBILE HAMBURGER MENU - GUARANTEED WORKING ===== */
+
+/* Desktop styles - default */
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background: var(--gold);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 3px;
+    display: block;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile styles - screens smaller than 1000px */
+@media (max-width: 1000px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+        gap: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 999;
+        border-top: 2px solid var(--gold);
+    }
+    
+    .nav-links.active {
+        display: flex !important;
+    }
+    
+    .nav-links a {
+        font-size: 1.3rem;
+        padding: 12px 20px;
+        width: 80%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+        color: var(--deep-black);
+        text-decoration: none;
+    }
+    
+    .nav-links a:hover {
+        color: var(--gold);
+        background: rgba(198,164,92,0.1);
+    }
+    
+    .nav-links a.active {
+        color: var(--gold);
+        font-weight: 600;
+    }
+    
+    .header-icons {
+        margin-left: auto;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+    .nav-links {
+        top: 90px;
+    }
+    
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+        width: 90%;
+    }
+    
+    .logo .main-name {
+        font-size: 1.2rem;
+    }
+    
+    .logo .main-name-part {
+        font-size: 1rem;
+    }
+    
+    .location-badge {
+        font-size: 0.6rem;
+    }
+}
+
 .hero-image {
     display: flex;
     justify-content: center;

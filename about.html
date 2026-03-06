@@ -8,107 +8,185 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        /* Page-specific styles */
+        .page-header {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+        }
+        
         .about-section {
             padding: 80px 0;
         }
+        
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
             align-items: center;
         }
+        
         .about-image img {
             width: 100%;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: var(--shadow);
         }
+        
         .about-content h2 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             color: var(--deep-black);
             margin-bottom: 30px;
+            font-family: 'Cormorant Garamond', serif;
         }
+        
         .about-content h2 span {
             color: var(--gold);
         }
+        
         .about-content p {
             margin-bottom: 20px;
-            font-size: 1.1rem;
             line-height: 1.8;
+            color: #444;
         }
+        
         .milestone-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-top: 50px;
-            text-align: center;
+            margin: 50px 0;
         }
+        
         .milestone-item {
+            text-align: center;
             padding: 30px;
-            background: var(--pure-white);
+            background: white;
             box-shadow: var(--shadow);
+            border-radius: 8px;
+            border-bottom: 3px solid var(--gold);
         }
+        
         .milestone-item .number {
             font-size: 3rem;
             font-family: 'Cormorant Garamond', serif;
             color: var(--gold);
             font-weight: 700;
         }
+        
+        .commitment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .commitment-card {
+            background: white;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            border-top: 4px solid var(--gold);
+            text-align: center;
+        }
+        
+        .commitment-card i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .commitment-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--deep-black);
+        }
+        
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .milestone-grid,
+            .commitment-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
     </style>
 </head>
 <body>
-
-<header>
-    <div class="container header-inner">
-        <div class="logo-container">
-            <img src="images/logo.png" alt="RUKMINIHALL JEWELLERS Logo" class="logo-image" onerror="this.style.display='none'">
-            <div class="logo">
-                <span class="main-name">RUKMINIHALL JEWELLERS</span>
+    <header>
+        <div class="container header-inner">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="RUKMINIHALL JEWELLERS Logo" class="logo-image" onerror="this.style.display='none'">
+                <div class="logo">
+                    <span class="main-name">RUKMINIHALL</span>
+                    <span class="main-name-part">JEWELLERS</span>
+                    <div class="location-badge">CHANNARAYAPATNA</div>
+                </div>
+            </div>
+            
+            <div class="hamburger" id="hamburger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" onclick="closeMenu()">Home</a>
+                <a href="collections.html" onclick="closeMenu()">Collections</a>
+                <a href="new-arrivals.html" onclick="closeMenu()">New Arrivals</a>
+                <a href="about.html" class="active" onclick="closeMenu()">About</a>
+                <a href="gallery.html" onclick="closeMenu()">Gallery</a>
+                <a href="contact.html" onclick="closeMenu()">Contact</a>
+            </div>
+            
+            <div class="header-icons">
+                <i class="far fa-heart"></i>
+                <i class="far fa-user"></i>
+                <i class="fas fa-search"></i>
             </div>
         </div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="collections.html">Collections</a>
-            <a href="new-arrivals.html">New</a>
-            <a href="about.html" class="active">About</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <div class="header-icons">
-            <i class="far fa-heart"></i>
-            <i class="far fa-user"></i>
-            <i class="fas fa-search"></i>
-        </div>
-    </div>
-</header>
+    </header>
 
-
-    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>About Rukminihall Jewellers</h1>
+            <h1>About RUKMINIHALL JEWELLERS</h1>
             <p>A legacy of trust, craftsmanship, and purity since 1962</p>
         </div>
     </section>
 
-    <!-- Our Story -->
     <section class="about-section">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="images/about/rj.jpeg" onerror="this.src='https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1769&auto=format&fit=crop'" alt="Our Craftsmanship">
+                    <img src="images/about/rj.jpeg" alt="Our Craftsmanship" onerror="this.src='https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1769&auto=format&fit=crop'">
                 </div>
                 <div class="about-content">
                     <h2><span>Our Story</span> – Six Decades of Excellence</h2>
                     <p>Founded in 1962 by the late Sri Rukminihallappa, our journey began in the heart of Channarayapatna with a simple vision: to create jewellery that would become family heirlooms. What started as a small workshop has today grown into one of the most trusted names in Indian jewellery.</p>
                     <p>For over 60 years, we have remained committed to our founding principles of uncompromising quality, ethical sourcing, and exceptional craftsmanship. Each piece that leaves our workshop carries with it generations of knowledge and a promise of purity.</p>
-                    <p>Today, the third generation of the Rukminihall family continues this legacy, blending traditional techniques with contemporary design to create jewellery that speaks to modern sensibilities while honoring our rich heritage.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Milestones -->
-    <section class="section bg-cream">
+    <section class="about-section bg-cream">
         <div class="container">
             <h2 class="section-title">Our Journey</h2>
             <div class="milestone-grid">
@@ -128,107 +206,97 @@
         </div>
     </section>
 
-    <!-- Craftsmanship -->
     <section class="about-section">
         <div class="container">
-            <div class="about-grid" style="direction: rtl;">
-                <div class="about-image">
-                    <img src="images/about/craftsmanship2.jpg" onerror="this.src='https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1887&auto=format&fit=crop'" alt="Craftsmanship">
-                </div>
-                <div class="about-content" style="direction: ltr;">
-                    <h2><span>Master Craftsmanship</span> – The Art of Perfection</h2>
-                    <p>Our master artisans, many of whom have been with us for over 30 years, bring centuries-old techniques to every piece they create. From intricate temple jewellery to modern minimalist designs, each creation undergoes rigorous quality checks.</p>
-                    <p>We take pride in our in-house design team that works closely with customers to create bespoke pieces that tell their unique stories. Every gem is hand-selected, every setting carefully crafted, ensuring that when you buy from us, you're investing in perfection.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Commitment -->
-    <section class="section bg-cream">
-        <div class="container">
             <h2 class="section-title">Our Commitments</h2>
-            <div style="display: grid; grid-template-columns: repeat(3,1fr); gap:30px; margin-top:40px;">
-                <div class="testimonial-card" style="text-align:center;">
+            <div class="commitment-grid">
+                <div class="commitment-card">
                     <i class="fas fa-certificate"></i>
-                    <h3 style="margin:20px 0;">Hallmarked Purity</h3>
+                    <h3>Hallmarked Purity</h3>
                     <p>Every gold piece is BIS hallmarked, ensuring 100% purity and value for your investment.</p>
                 </div>
-                <div class="testimonial-card" style="text-align:center;">
+                <div class="commitment-card">
                     <i class="fas fa-gem"></i>
-                    <h3 style="margin:20px 0;">Certified Diamonds</h3>
+                    <h3>Certified Diamonds</h3>
                     <p>All our diamonds come with IGI/GIA certification, guaranteeing authenticity.</p>
                 </div>
-                <div class="testimonial-card" style="text-align:center;">
+                <div class="commitment-card">
                     <i class="fas fa-hand-holding-heart"></i>
-                    <h3 style="margin:20px 0;">Ethical Sourcing</h3>
+                    <h3>Ethical Sourcing</h3>
                     <p>We source all materials ethically, supporting responsible mining practices.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-   <footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div class="footer-logo-container">
-                    <img src="images/logo.png" alt="RUKMINIHALL JEWELLERS Logo" class="footer-logo-image" onerror="this.style.display='none'">
-                    <div class="footer-logo">
-                        <span class="footer-main-name">RUKMINIHALL</span>
-                        <span class="footer-main-name-part">JEWELLERS</span>
-                        <div class="footer-location">CHANNARAYAPATNA</div>
-                        <div class="footer-established">Since 1962</div>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo-container">
+                        <img src="images/logo.png" alt="RUKMINIHALL JEWELLERS Logo" class="footer-logo-image" onerror="this.style.display='none'">
+                        <div class="footer-logo">
+                            <span class="footer-main-name">RUKMINIHALL</span>
+                            <span class="footer-main-name-part">JEWELLERS</span>
+                            <div class="footer-location">CHANNARAYAPATNA</div>
+                        </div>
+                    </div>
+                    <p class="footer-description">Crafting heirlooms that celebrate India's rich heritage with uncompromising purity.</p>
+                    <div class="social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <p class="footer-description">Crafting heirlooms that celebrate India's rich heritage with uncompromising purity.</p>
-                <div class="social">
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <a href="collections.html#gold">Gold</a>
+                    <a href="collections.html#diamond">Diamond</a>
+                    <a href="collections.html#silver">Silver</a>
+                    <a href="collections.html#bridal">Bridal</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="contact.html">Contact</a>
+                    <a href="shipping-policy.html">Shipping Policy</a>
+                    <a href="refund-policy.html">Refund Policy</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Policies</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-conditions.html">Terms & Conditions</a>
+                    <a href="accessibility-statement.html">Accessibility</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Address</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Main Road, Channarayapatna</p>
+                    <p><i class="fas fa-map"></i> Karnataka, India - 573116</p>
+                    <p><i class="fas fa-phone"></i> +91 8156 123456</p>
                 </div>
             </div>
-            <div class="footer-col">
-                <h4>Collections</h4>
-                <a href="collections.html#gold">Gold</a>
-                <a href="collections.html#diamond">Diamond</a>
-                <a href="collections.html#silver">Silver</a>
-                <a href="collections.html#bridal">Bridal</a>
-            </div>
-            <div class="footer-col">
-                <h4>Support</h4>
-                <a href="contact.html">Contact</a>
-                <a href="shipping-policy.html">Shipping Policy</a>
-                <a href="refund-policy.html">Refund Policy</a>
-            </div>
-            <div class="footer-col">
-                <h4>Policies</h4>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms-conditions.html">Terms & Conditions</a>
-                <a href="accessibility-statement.html">Accessibility</a>
-            </div>
-            <div class="footer-col">
-                <h4>Address</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Main Road, Channarayapatna</p>
-                <p><i class="fas fa-map"></i> Karnataka, India - 573116</p>
-                <p><i class="fas fa-phone"></i> +91 8156 123456</p>
-                <p><i class="fas fa-envelope"></i> info@rukminihall.com</p>
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a> <span class="separator">|</span>
+                    <a href="accessibility-statement.html">Accessibility</a> <span class="separator">|</span>
+                    <a href="shipping-policy.html">Shipping</a> <span class="separator">|</span>
+                    <a href="terms-conditions.html">Terms</a> <span class="separator">|</span>
+                    <a href="refund-policy.html">Refund</a>
+                </div>
+                <p class="copyright">© 2025 <span class="brand-highlight">RUKMINIHALL JEWELLERS</span>, Channarayapatna</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a> <span class="separator">|</span>
-                <a href="accessibility-statement.html">Accessibility Statement</a> <span class="separator">|</span>
-                <a href="shipping-policy.html">Shipping Policy</a> <span class="separator">|</span>
-                <a href="terms-conditions.html">Terms & Conditions</a> <span class="separator">|</span>
-                <a href="refund-policy.html">Refund Policy</a>
-            </div>
-            <p class="copyright">© 2025 <span class="brand-highlight">RUKMINIHALL JEWELLERS</span>, Channarayapatna. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('active');
+            document.getElementById('hamburger-menu').classList.toggle('open');
+        }
+        
+        function closeMenu() {
+            document.getElementById('nav-links').classList.remove('active');
+            document.getElementById('hamburger-menu').classList.remove('open');
+        }
+    </script>
 </body>
 </html>

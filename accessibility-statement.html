@@ -148,6 +148,18 @@
     </div>
 </footer>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('active');
+            document.getElementById('hamburger-menu').classList.toggle('open');
+        }
+        
+        function closeMenu() {
+            document.getElementById('nav-links').classList.remove('active');
+            document.getElementById('hamburger-menu').classList.remove('open');
+        }
+    </script>
+
     <script src="js/main.js"></script>
 </body>
 </html>
